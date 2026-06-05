@@ -61,13 +61,13 @@ window.addEventListener("scroll", () => {
     });
 });
 
+const previewImageWrapper = document.querySelector('.image-preview-wrapper');
 const previewImage = document.querySelector('.content-image-preview');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 
-if (previewImage) {
-
-    previewImage.addEventListener('click', () => {
+if (previewImageWrapper && previewImage && lightbox && lightboxImg) {
+    previewImageWrapper.addEventListener('click', () => {
         lightboxImg.src = previewImage.src;
         lightbox.classList.add('active');
     });
@@ -75,5 +75,4 @@ if (previewImage) {
     lightbox.addEventListener('click', () => {
         lightbox.classList.remove('active');
     });
-
 }

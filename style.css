@@ -79,6 +79,7 @@ h3 {
   font-weight: 800;
   margin-bottom: 1rem;
   background: linear-gradient(90deg, #d8b4fe, var(--primary-color));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

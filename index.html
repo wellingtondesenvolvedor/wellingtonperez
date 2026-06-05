@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <div class="hamburger" id="hamburger">
@@ -19,12 +23,34 @@
 
     <nav class="navbar fade-in">
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="#sobre">Sobre Mim</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#ai">AI & Agentes</a></li>
-        <li><a href="#experiencia">Trajetória</a></li>
-        <li><a href="#formacao">Formação</a></li>
-        <li><a href="#conteudo">Criação de Conteúdo</a></li>
+        <li>
+          <a href="#sobre"
+            ><i class="fa-solid fa-user-astronaut fa-fw"></i> Sobre Mim</a
+          >
+        </li>
+        <li>
+          <a href="#projetos"
+            ><i class="fa-solid fa-rocket fa-fw"></i> Projetos</a
+          >
+        </li>
+        <li>
+          <a href="#ai"><i class="fa-solid fa-robot fa-fw"></i> AI & Agentes</a>
+        </li>
+        <li>
+          <a href="#experiencia"
+            ><i class="fa-solid fa-briefcase fa-fw"></i> Trajetória</a
+          >
+        </li>
+        <li>
+          <a href="#formacao"
+            ><i class="fa-solid fa-graduation-cap fa-fw"></i> Formação</a
+          >
+        </li>
+        <li>
+          <a href="#conteudo"
+            ><i class="fa-solid fa-meteor fa-fw"></i> Criação de Conteúdo</a
+          >
+        </li>
       </ul>
     </nav>
 
@@ -41,14 +67,21 @@
       <div class="hero-content">
         <h1>Wellington Perez</h1>
         <h2>Analista de Integração | Engenheiro de Software</h2>
-        <p>Catanduva, São Paulo, Brasil</p>
+        <p>
+          <i class="fa-solid fa-location-dot" style="margin-right: 5px"></i
+          >Catanduva, São Paulo, Brasil
+        </p>
         <div class="contact-links">
-          <a href="mailto:wellingtonaperez@gmail.com" class="btn">Email</a>
+          <a href="mailto:wellingtonaperez@gmail.com" class="btn"
+            ><i class="fa-solid fa-envelope" style="margin-right: 5px"></i>
+            Email</a
+          >
           <a
             href="https://www.linkedin.com/in/wellperez"
             target="_blank"
             class="btn outline"
-            >LinkedIn</a
+            ><i class="fa-brands fa-linkedin" style="margin-right: 5px"></i>
+            LinkedIn</a
           >
         </div>
       </div>
@@ -56,7 +89,13 @@
 
     <main>
       <section class="about slide-up" id="sobre">
-        <h3>Sobre Mim</h3>
+        <h3>
+          <i
+            class="fa-solid fa-user-astronaut"
+            style="color: var(--primary-color); margin-right: 10px"
+          ></i
+          >Sobre Mim
+        </h3>
         <p>
           Com mais de dois anos no iFood como Analista de Integração, contribuo
           para a consolidação de parceiros no Marketplace e melhoria de
@@ -85,21 +124,57 @@
       </section>
 
       <section class="skills slide-up">
-        <h3>Competências e Ferramentas</h3>
+        <h3>
+          <i
+            class="fa-solid fa-code"
+            style="color: var(--primary-color); margin-right: 10px"
+          ></i
+          >Competências e Ferramentas
+        </h3>
         <div class="skills-grid">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">Databricks</span>
-          <span class="skill-tag">Big Data</span>
-          <span class="skill-tag">Machine Learning</span>
-          <span class="skill-tag">Business Intelligence (BI)</span>
-          <span class="skill-tag">C# / .NET Core</span>
-          <span class="skill-tag">Desenvolvimento de Agentes (AI)</span>
+          <span class="skill-tag"
+            ><i class="fa-brands fa-python" style="margin-right: 5px"></i
+            >Python</span
+          >
+          <span class="skill-tag"
+            ><i class="fa-solid fa-database" style="margin-right: 5px"></i
+            >SQL</span
+          >
+          <span class="skill-tag"
+            ><i class="fa-solid fa-cubes" style="margin-right: 5px"></i
+            >Databricks</span
+          >
+          <span class="skill-tag"
+            ><i class="fa-solid fa-server" style="margin-right: 5px"></i>Big
+            Data</span
+          >
+          <span class="skill-tag"
+            ><i class="fa-solid fa-network-wired" style="margin-right: 5px"></i
+            >Machine Learning</span
+          >
+          <span class="skill-tag"
+            ><i class="fa-solid fa-chart-pie" style="margin-right: 5px"></i
+            >Business Intelligence (BI)</span
+          >
+          <span class="skill-tag"
+            ><i class="fa-brands fa-windows" style="margin-right: 5px"></i>C# /
+            .NET Core</span
+          >
+          <span class="skill-tag"
+            ><i class="fa-solid fa-microchip" style="margin-right: 5px"></i
+            >Desenvolvimento de Agentes (AI)</span
+          >
         </div>
       </section>
 
       <section class="soft-skills slide-up" id="soft-skills">
-        <h3>Soft Skills</h3>
+        <h3>
+          <i
+            class="fa-solid fa-brain"
+            style="color: var(--primary-color); margin-right: 10px"
+          ></i
+          >Soft Skills
+        </h3>
         <div class="project-grid">
           <div class="project-card" style="padding: 1.5rem">
             <h4 style="margin-bottom: 0.5rem; color: var(--primary-color)">
@@ -145,11 +220,18 @@
       </section>
 
       <section class="certifications-languages slide-up" id="certificacoes">
-        <h3>Certificações e Idiomas</h3>
+        <h3>
+          <i
+            class="fa-solid fa-certificate"
+            style="color: var(--primary-color); margin-right: 10px"
+          ></i
+          >Certificações e Idiomas
+        </h3>
         <div class="project-grid">
           <div class="project-card">
             <h4 style="margin-bottom: 1rem; color: var(--primary-color)">
-              Certificações
+              <i class="fa-solid fa-shield-halved" style="margin-right: 8px"></i
+              >Certificações
             </h4>
             <ul class="project-highlights" style="margin-top: 0">
               <li><strong>CSCU:</strong> Certified Secure Computer User</li>
@@ -164,7 +246,8 @@
 
           <div class="project-card">
             <h4 style="margin-bottom: 1rem; color: var(--primary-color)">
-              Idiomas
+              <i class="fa-solid fa-language" style="margin-right: 8px"></i
+              >Idiomas
             </h4>
             <ul class="project-highlights" style="margin-top: 0">
               <li>
@@ -178,10 +261,15 @@
       </section>
 
       <section class="projects slide-up" id="projetos">
-        <h3>Projetos e Impacto no iFood</h3>
+        <h3>
+          <i
+            class="fa-solid fa-rocket"
+            style="color: var(--primary-color); margin-right: 10px"
+          ></i
+          >Projetos e Impacto no iFood
+        </h3>
 
         <div class="project-grid">
-          <!-- Projeto MQI -->
           <div class="project-card">
             <h4>Dashboards de Monitoramento e Qualidade (MQI)</h4>
             <p>
@@ -216,7 +304,6 @@
             </ul>
           </div>
 
-          <!-- Projeto iReport -->
           <div class="project-card">
             <h4>iReport - Automação de Documentação</h4>
             <p>
@@ -250,7 +337,6 @@
             </ul>
           </div>
 
-          <!-- Projeto Open Links -->
           <div class="project-card">
             <h4>Open Links - Validação em Massa</h4>
             <p>
@@ -275,9 +361,14 @@
         </div>
       </section>
 
-      <!-- NOVA SEÇÃO AI -->
       <section class="ai-agents slide-up" id="ai">
-        <h3>AI & Agentes Inteligentes</h3>
+        <h3>
+          <i
+            class="fa-solid fa-robot"
+            style="color: var(--primary-color); margin-right: 10px"
+          ></i
+          >AI & Agentes Inteligentes
+        </h3>
         <div class="project-card">
           <h4>SAGE — Smart Analyst for Groceries Enhancement</h4>
           <p>
@@ -318,19 +409,24 @@
 
           <div class="chat-snippet">
             <span
-              >💬 "Quais produtos do Grupo Savegnago estão sem estoque
-              hoje?"</span
+              >💬 "Quais produtos do Grupo XYZ estão sem estoque hoje?"</span
             >
             <span
               >💬 "A loja 12345 recebeu integração nos últimos 7 dias?"</span
             >
-            <span>💬 "Existem itens bloqueados no catálogo do Grupo X?"</span>
+            <span>💬 "Existem itens bloqueados no catálogo do Grupo XYZ?"</span>
           </div>
         </div>
       </section>
 
       <section class="experience slide-up" id="experiencia">
-        <h3>Trajetória Profissional</h3>
+        <h3>
+          <i
+            class="fa-solid fa-briefcase"
+            style="color: var(--primary-color); margin-right: 10px"
+          ></i
+          >Trajetória Profissional
+        </h3>
         <div class="timeline">
           <div class="timeline-item">
             <h4>Analista de Integração</h4>
@@ -338,22 +434,51 @@
             <p>
               Implantação e sustentação de parceiros no Marketplace, análise de
               dados via Databricks e automação de processos internos.
+              Monitoramento de integrações, desenvolvimento de dashboards e
+              criação de ferramentas para otimização de operações. Foco em
+              garantir a saúde das integrações e maximizar os resultados dos
+              parceiros, atuando como ponte entre a engenharia e as áreas de
+              negócio para traduzir necessidades operacionais em soluções
+              tecnológicas. Projeto de migração dos parceiros dos canais legados
+              para as APIs modernas, garantindo a escalabilidade e eficiência
+              das integrações. Desenvolvimento de ferramentas de automação para
+              auditoria e monitoramento, resultando em uma economia
+              significativa de tempo e recursos para a equipe. Implementação de
+              dashboards de monitoramento de GMV, análise de status codes e
+              identificação de anomalias, contribuindo para a melhoria contínua
+              do ecossistema de integrações. Mais de 300 agendas realizadas com
+              parceiros, garantindo a saúde das integrações e a qualidade dos
+              dados.
             </p>
           </div>
           <div class="timeline-item">
             <h4>Engenheiro de Software</h4>
             <h5>BRQfoods | Dez 2022 - Ago 2023</h5>
             <p>
-              Desenvolvimento de APIs com .NET Core (C#) e construção de
-              processos de ETL para Business Intelligence.
+              Atuação no desenvolvimento de APIs de microsserviços em C# para
+              tratar chamados do SAC, comunicando-se diretamente com o ERP
+              Protheus. Desenvolvimento de customizações em ADVPL para o
+              Protheus, sanando necessidades específicas de um cliente do setor
+              de laticínios. Criação e manutenção de pipelines de dados
+              utilizando SSIS (SQL Server Integration Services) para a
+              disponibilização de dados no Data Lake, viabilizando o consumo
+              analítico pelas ferramentas de Business Intelligence (BI) da
+              empresa.
             </p>
           </div>
           <div class="timeline-item">
             <h4>Engenheiro de Software</h4>
             <h5>DataPlus Sistemas | Fev 2021 - Nov 2022</h5>
             <p>
-              Desenvolvedor focado na plataforma .NET (C#, VB.NET, Xamarin) para
-              evolução e implantação de plataformas ERP.
+              Manutenção e evolução do ERP proprietário da empresa, incluindo o
+              desenvolvimento de integrações fiscais essenciais (NFS-e, NF-e e
+              DIRF). Manutenção e criação de novas funcionalidades no ORM
+              próprio, com forte adoção de Reflection em VB.NET e paradigma de
+              Orientação a Objetos. Desenvolvimento e manutenção de um framework
+              para a geração automatizada de relatórios baseados em classes e
+              objetos, utilizando Crystal Reports. Criação de novas
+              funcionalidades e sustentação do aplicativo mobile de força de
+              vendas, totalmente integrado ao ERP, utilizando Xamarin.
             </p>
           </div>
           <div class="timeline-item">
@@ -389,7 +514,13 @@
       </section>
 
       <section class="experience slide-up" id="formacao">
-        <h3>Formação Acadêmica</h3>
+        <h3>
+          <i
+            class="fa-solid fa-graduation-cap"
+            style="color: var(--primary-color); margin-right: 10px"
+          ></i
+          >Formação Acadêmica
+        </h3>
         <div class="timeline">
           <div class="timeline-item">
             <h4>
@@ -470,7 +601,13 @@
       </section>
 
       <section class="content-creation slide-up" id="conteudo">
-        <h3>Exploração e Criação de Conteúdo</h3>
+        <h3>
+          <i
+            class="fa-solid fa-satellite-dish"
+            style="color: var(--primary-color); margin-right: 10px"
+          ></i
+          >Exploração e Criação de Conteúdo
+        </h3>
         <div class="project-card">
           <div class="content-text content-wrapper">
             <h4 style="color: var(--primary-color); margin-bottom: 1rem">

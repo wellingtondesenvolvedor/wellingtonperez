@@ -13,6 +13,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Cria o efeito de rolagem suave */
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
@@ -256,6 +260,45 @@ footer {
 .chat-snippet span {
     display: block;
     line-height: 1.4;
+}
+
+/* --- Barra de Navegação --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 5, 20, 0.85); /* Fundo escuro levemente transparente */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--surface-color);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+}
+
+/* Evita que o topo da seção fique escondido atrás da barra fixa */
+section {
+    scroll-margin-top: 80px; 
 }
 
 @keyframes fadeIn {

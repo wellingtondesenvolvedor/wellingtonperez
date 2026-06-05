@@ -1,323 +1,603 @@
 :root {
-    --bg-color: #0a0514; /* Fundo super escuro, levemente puxado pro roxo */
-    --surface-color: #1a103c;
-    --primary-color: #a855f7; /* Roxo vibrante */
-    --primary-hover: #9333ea;
-    --text-main: #f3e8ff;
-    --text-muted: #d8b4fe;
+  --bg-color: #0a0514;
+  /* Fundo super escuro, levemente puxado pro roxo */
+  --surface-color: #1a103c;
+  --primary-color: #a855f7;
+  /* Roxo vibrante */
+  --primary-hover: #9333ea;
+  --text-main: #f3e8ff;
+  --text-muted: #d8b4fe;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth; /* Cria o efeito de rolagem suave */
+  scroll-behavior: smooth;
+  /* Cria o efeito de rolagem suave */
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    line-height: 1.6;
-    overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
-    color: var(--text-main);
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-main);
 }
 
 h3 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--primary-color);
-    display: inline-block;
-    padding-bottom: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-color);
+  display: inline-block;
+  padding-bottom: 0.5rem;
 }
 
 /* Header / Hero Section */
 .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: radial-gradient(circle at center, #2e1065 0%, var(--bg-color) 70%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at center, #2e1065 0%, var(--bg-color) 70%);
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    background: linear-gradient(90deg, #d8b4fe, var(--primary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #d8b4fe, var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero h2 {
-    font-size: 1.5rem;
-    color: var(--text-muted);
-    font-weight: 300;
-    margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 2rem;
 }
 
 .contact-links {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  /* Adiciona um bom espaço entre a cidade e os botões */
 }
 
 /* Botões com Efeito */
 .btn {
-    padding: 0.8rem 2rem;
-    background-color: var(--primary-color);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid var(--primary-color);
+  padding: 0.8rem 2rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary-color);
 }
 
 .btn:hover {
-    background-color: transparent;
-    box-shadow: 0 0 20px var(--primary-hover);
-    transform: translateY(-3px);
+  background-color: transparent;
+  box-shadow: 0 0 20px var(--primary-hover);
+  transform: translateY(-3px);
 }
 
 .btn.outline {
-    background-color: transparent;
-    color: var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
 }
 
 .btn.outline:hover {
-    background-color: var(--primary-color);
-    color: #fff;
+  background-color: var(--primary-color);
+  color: #fff;
 }
 
 /* Main Content */
 main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
 section {
-    margin-bottom: 6rem;
+  margin-bottom: 6rem;
 }
 
 /* Skills */
 .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .skill-tag {
-    background-color: var(--surface-color);
-    color: var(--primary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border: 1px solid var(--primary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--surface-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid var(--primary-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-tag:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px var(--primary-color);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--primary-color);
 }
 
 /* Projects */
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
 .project-card {
-    background-color: var(--surface-color);
-    padding: 2rem;
-    border-radius: 12px;
-    border-top: 4px solid var(--primary-color);
-    transition: all 0.4s ease;
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 12px;
+  border-top: 4px solid var(--primary-color);
+  transition: all 0.4s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
 }
 
 .project-card h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 /* Project Highlights (Listas de Impacto) */
 .project-highlights {
-    list-style: none;
-    padding: 0;
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
 .project-highlights li {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    padding-left: 1.5rem;
-    position: relative;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  padding-left: 1.5rem;
+  position: relative;
 }
 
 .project-highlights li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-    font-weight: bold;
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
 .project-highlights strong {
-    color: var(--text-main);
+  color: var(--text-main);
 }
 
 /* Timeline Expecience */
 .timeline-item {
-    border-left: 2px solid var(--primary-color);
-    padding-left: 2rem;
-    position: relative;
-    margin-bottom: 3rem;
-    transition: all 0.3s ease;
+  border-left: 2px solid var(--primary-color);
+  padding-left: 2rem;
+  position: relative;
+  margin-bottom: 3rem;
+  transition: all 0.3s ease;
 }
 
 .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -9px;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--primary-color);
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--primary-color);
 }
 
 .timeline-item:hover {
-    transform: translateX(10px);
+  transform: translateX(10px);
 }
 
 .timeline-item h5 {
-    color: var(--text-muted);
-    font-weight: 400;
-    margin-bottom: 1rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 2rem;
-    border-top: 1px solid var(--surface-color);
-    color: var(--text-muted);
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--surface-color);
+  color: var(--text-muted);
 }
 
 /* Animações CSS Base */
 .fade-in {
-    opacity: 0;
-    animation: fadeIn 1.5s forwards;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
 }
 
 .slide-up {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .slide-up.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* --- Estilos para a Seção AI e Simulador de Chat --- */
 .chat-snippet {
-    background-color: #000000;
-    border-left: 4px solid var(--primary-color);
-    padding: 1.2rem;
-    margin-top: 2rem;
-    border-radius: 0 8px 8px 0;
-    font-family: 'Courier New', Courier, monospace;
-    color: var(--text-muted);
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    font-size: 0.95rem;
-    box-shadow: inset 0 0 10px rgba(168, 85, 247, 0.05);
+  background-color: #000000;
+  border-left: 4px solid var(--primary-color);
+  padding: 1.2rem;
+  margin-top: 2rem;
+  border-radius: 0 8px 8px 0;
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 10px rgba(168, 85, 247, 0.05);
 }
 
 .chat-snippet span {
-    display: block;
-    line-height: 1.4;
+  display: block;
+  line-height: 1.4;
 }
 
 /* --- Barra de Navegação --- */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(10, 5, 20, 0.85); /* Fundo escuro levemente transparente */
-    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
-    z-index: 1000;
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--surface-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(10, 5, 20, 0.85);
+  /* Fundo escuro levemente transparente */
+  backdrop-filter: blur(10px);
+  /* Efeito de vidro fosco */
+  z-index: 1000;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--surface-color);
 }
 
 .navbar ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar a {
-    color: var(--text-main);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Header / Hero Section Ajustado */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at center, #2e1065 0%, var(--bg-color) 70%);
+  position: relative;
+  overflow: hidden;
+  /* Impede que as órbitas criem barra de rolagem horizontal */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  /* Garante que o texto e os botões fiquem acima do desenho */
+}
+
+/* --- Arte CSS: Constelação de Dados (Cósmico + Integração) --- */
+.cosmic-network {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  z-index: 1;
+  /* Fica atrás do texto */
+  pointer-events: none;
+  /* O mouse ignora o desenho, permitindo clicar nos botões */
+}
+
+/* Núcleo brilhante (Buraco Negro / Servidor Central) */
+.core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 80%);
+  border-radius: 50%;
+  box-shadow: 0 0 40px var(--primary-color), 0 0 80px var(--primary-hover);
+  animation: pulseCore 4s infinite alternate;
+}
+
+/* Órbitas (Trilhas de dados espaciais) */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px dashed rgba(168, 85, 247, 0.25);
+  /* Tracejado para lembrar pacotes de dados */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin linear infinite;
+}
+
+/* Tamanhos e velocidades diferentes para cada órbita */
+.orbit-1 {
+  width: 250px;
+  height: 250px;
+  animation-duration: 20s;
+}
+
+.orbit-2 {
+  width: 450px;
+  height: 450px;
+  animation-duration: 35s;
+  animation-direction: reverse;
+}
+
+.orbit-3 {
+  width: 650px;
+  height: 650px;
+  animation-duration: 50s;
+}
+
+/* Nódulos de dados (Satélites/UFOs transitando) */
+.node {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--text-main);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--text-main), 0 0 25px var(--primary-color);
+}
+
+/* Posicionando os nós em diferentes pontos de suas órbitas */
+.orbit-1 .node {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.orbit-2 .node {
+  background-color: var(--primary-color);
+  top: 50%;
+  left: -5px;
+  transform: translateY(-50%);
+}
+
+.orbit-3 .node {
+  background-color: var(--text-muted);
+  top: 85%;
+  left: 15%;
+}
+
+/* Tamanhos e velocidades normais (Sem o mouse) */
+.orbit-1 {
+  width: 250px;
+  height: 250px;
+  animation-duration: 30s;
+}
+
+.orbit-2 {
+  width: 450px;
+  height: 450px;
+  animation-duration: 45s;
+  animation-direction: reverse;
+}
+
+.orbit-3 {
+  width: 650px;
+  height: 650px;
+  animation-duration: 60s;
+}
+
+/* --- Interação com o Mouse (Hover na Constelação) --- */
+/* Transições aplicadas APENAS nas cores e sombras, ignorando a rotação para não quebrar a órbita */
+.core,
+.orbit,
+.node {
+  transition: box-shadow 0.5s ease, border-color 0.5s ease, background-color 0.5s ease;
+}
+
+/* Quando o mouse passa em qualquer lugar do Hero, a arte reage */
+.hero:hover .core {
+  /* O núcleo ganha um brilho maior e mais espalhado */
+  box-shadow: 0 0 60px var(--primary-color), 0 0 120px var(--primary-hover);
+}
+
+.hero:hover .orbit {
+  /* As linhas tracejadas ficam mais visíveis/brilhantes */
+  border-color: rgba(168, 85, 247, 0.6);
+}
+
+.hero:hover .node {
+  /* Os "pacotes de dados" em órbita brilham mais forte e ficam brancos */
+  box-shadow: 0 0 20px var(--text-main), 0 0 40px var(--primary-hover);
+  background-color: #ffffff;
+}
+
+/* --- Aceleração das Órbitas no Hover --- */
+.hero:hover .orbit-1 {
+  animation-duration: 8s;
+}
+
+.hero:hover .orbit-2 {
+  animation-duration: 15s;
+}
+
+.hero:hover .orbit-3 {
+  animation-duration: 25s;
 }
 
 /* Evita que o topo da seção fique escondido atrás da barra fixa */
 section {
-    scroll-margin-top: 80px; 
+  scroll-margin-top: 80px;
 }
 
 @keyframes fadeIn {
-    to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- Estilos base do Menu Hambúrguer (Escondido no Desktop) --- */
+/* --- Ajuste do Menu Hambúrguer (Suspenso e Maior) --- */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 7px;
+  /* Aumentado de 6px para 7px */
+  position: absolute;
+  right: 25px;
+  /* Aumentado de 20px para 25px para afastar da borda */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+  padding: 10px;
+  /* Adicionado para aumentar a área de toque */
+  background-color: rgba(168, 85, 247, 0.1);
+  /* Um leve fundo translúcido para dar destaque */
+  border-radius: 8px;
+}
+
+.hamburger span {
+  display: block;
+  width: 32px;
+  /* Aumentado de 28px para 32px */
+  height: 4px;
+  /* Aumentado de 3px para 4px */
+  background-color: var(--text-main);
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 /* --- Responsividade da Barra de Navegação para Celulares --- */
 @media (max-width: 768px) {
-    .navbar ul {
-        flex-wrap: wrap; /* Permite que os links quebrem linha se faltar espaço na tela */
-        gap: 1rem;
-        padding: 0 10px;
-    }
-    
-    .navbar a {
-        font-size: 0.85rem; /* Diminui levemente a fonte no celular para caber melhor */
-    }
-    
-    section {
-        scroll-margin-top: 110px; /* Aumenta a margem de rolagem para compensar a barra caso ela ocupe duas linhas */
-    }
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(10, 5, 20, 0.98);
+    backdrop-filter: blur(15px);
+    padding: 0;
+    /* Zeramos o padding aqui para colocar nos itens */
+    gap: 0;
+    /* Removemos o gap para que as linhas separadoras fiquem coladas */
+    transition: left 0.4s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid var(--primary-color);
+  }
+
+  .navbar ul.active {
+    left: 0;
+  }
+
+  /* Adiciona a linha separadora sutil em cada item da lista */
+  .navbar li {
+    width: 100%;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+    /* Linha roxa bem discreta */
+  }
+
+  /* Remove a linha do último item para não conflitar com a borda de baixo do menu */
+  .navbar li:last-child {
+    border-bottom: none;
+  }
+
+  /* Desgruda o texto da borda e aumenta a área de clique */
+  .navbar a {
+    font-size: 1.1rem;
+    display: block;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    /* 1.2rem em cima/baixo e 2rem nas laterais */
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: var(--primary-color);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: var(--primary-color);
+  }
+
+  section {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* Animações Keyframes */
+@keyframes spin {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes pulseCore {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.2;
+  }
 }

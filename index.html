@@ -36,6 +36,7 @@
                 <span class="skill-tag">Machine Learning</span>
                 <span class="skill-tag">Business Intelligence (BI)</span>
                 <span class="skill-tag">C# / .NET Core</span>
+                <span class="skill-tag">Desenvolvimento de Agentes (AI)</span>
             </div>
         </section>
 
@@ -43,6 +44,7 @@
             <h3>Projetos e Impacto no iFood</h3>
             
             <div class="project-grid">
+                <!-- Projeto MQI -->
                 <div class="project-card">
                     <h4>Dashboards de Monitoramento e Qualidade (MQI)</h4>
                     <p>Implementação pioneira da cultura de análise de dados no setor de integração de Groceries. O ecossistema de dashboards foi criado para garantir a saúde das integrações e maximizar os resultados dos parceiros.</p>
@@ -54,6 +56,7 @@
                     </ul>
                 </div>
 
+                <!-- Projeto iReport -->
                 <div class="project-card">
                     <h4>iReport - Automação de Documentação</h4>
                     <p>Ferramenta desenvolvida em Python para automatizar a extração e auditoria das configurações iniciais de lojas implantadas. A aplicação consome os endpoints do backoffice, processa os arquivos JSON e gera um relatório em PDF arquivado diretamente no Salesforce.</p>
@@ -65,6 +68,7 @@
                     </ul>
                 </div>
 
+                <!-- Projeto Open Links -->
                 <div class="project-card">
                     <h4>Open Links - Validação em Massa</h4>
                     <p>Aplicação desktop em Python com interface gráfica (Tkinter) desenvolvida para acelerar o processo de troubleshooting e monitoramento ativo do ecossistema.</p>
@@ -72,6 +76,28 @@
                         <li><strong>Funcionalidade:</strong> Permite a injeção de múltiplos IDs de lojas e direcionamento em lote para diversas plataformas internas de validação (Metabase, Extranet, BKO Área de Entrega, Shop Metrics).</li>
                         <li><strong>Resultado:</strong> Otimização extrema no tempo de resposta da equipe para validar funcionamentos, verificar pausas e analisar o <i>rollout</i> de integrações.</li>
                     </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOVA SEÇÃO AI -->
+        <section class="ai-agents slide-up" id="ai">
+            <h3>AI & Agentes Inteligentes</h3>
+            <div class="project-card">
+                <h4>SAGE — Smart Analyst for Groceries Enhancement</h4>
+                <p>O SAGE é um assistente inteligente de dados desenvolvido especialmente para o ecossistema iFood, com foco em redes e grupos de supermercados. Integrado nativamente ao <strong>Slack</strong>, ele atua como um analista em tempo real, transformando perguntas em linguagem natural em análises precisas, sem exigir conhecimento prévio em SQL das equipes de negócio.</p>
+                
+                <ul class="project-highlights">
+                    <li><strong>Automação de Consultas (Databricks):</strong> Traduz a intenção do usuário para queries SQL complexas, executa no ambiente Databricks de forma segura e monitora proativamente os estados de processamento (PENDING, RUNNING e COMPLETED).</li>
+                    <li><strong>Análise de Catálogo e Ingestão:</strong> Identifica anomalias sistêmicas, bloqueios de itens, variações de preço (DE-POR e Atacarejo), avaliação por curva de relevância e histórico de atualização de atributos.</li>
+                    <li><strong>Filtros Dinâmicos:</strong> Capacidade de isolar análises por grupo comercial, rede, identificador de loja (FRN_ID) e janelas de tempo específicas.</li>
+                    <li><strong>Governança e Integridade:</strong> Desenvolvido com foco em zero alucinação. O agente entrega resultados estruturados no Slack (com médias, detalhamentos e alertas) e comunica de forma transparente quando há ausência de dados, garantindo que valores nunca sejam estimados ou inventados.</li>
+                </ul>
+
+                <div class="chat-snippet">
+                    <span>💬 "Quais produtos do Grupo Savegnago estão sem estoque hoje?"</span>
+                    <span>💬 "A loja 12345 recebeu integração nos últimos 7 dias?"</span>
+                    <span>💬 "Existem itens bloqueados no catálogo do Grupo X?"</span>
                 </div>
             </div>
         </section>
@@ -113,7 +139,7 @@
                 <div class="timeline-item">
                     <h4>Bacharelado em Ciência da Computação</h4>
                     <h5>Universidade Paulista (UNIP) | Jan 2021 - Dez 2024</h5>
-                    <p>Formação sólida em engenharia de software, estrutura de dados e algoritmos. <br><br><strong>Trabalho de Conclusão de Curso:</strong> <i>"Aplicação de regressão logística para detecção de carcinoma de mama"</i>. O estudo teve como objetivo desenvolver um modelo preditivo baseado em Machine Learning e estatística voltado à área da saúde. A partir da análise exploratória multivariada em uma base de 116 pacientes , a ferramenta identificou que a Idade, o Índice de Massa Corporal (IMC), a Glicose e a Resistina configuram os principais fatores de risco e biomarcadores eficientes. O modelo final alcançou excelente desempenho, com precisão de 78,7% e uma Área Sob a Curva ROC (AUC) de 87,1%.</p>
+                    <p>Formação sólida em engenharia de software, estrutura de dados e algoritmos. <br><br><strong>Trabalho de Conclusão de Curso:</strong> <i>"Aplicação de regressão logística para detecção de carcinoma de mama"</i>. O estudo teve como objetivo desenvolver um modelo preditivo baseado em Machine Learning e estatística voltado à área da saúde. A partir da análise exploratória multivariada em uma base de 116 pacientes, a ferramenta identificou que a Idade, o Índice de Massa Corporal (IMC), a Glicose e a Resistina configuram os principais fatores de risco e biomarcadores eficientes. O modelo final alcançou excelente desempenho, com precisão de 78,7% e uma Área Sob a Curva ROC (AUC) de 87,1%.</p>
                 </div>
                 <div class="timeline-item">
                     <h4>Pós-Graduação em Engenharia de Software</h4>

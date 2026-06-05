@@ -504,6 +504,12 @@ section {
   scroll-margin-top: 80px;
 }
 
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -537,6 +543,10 @@ section {
 /* ================================================= */
 
 @media (max-width: 768px) {
+  .content-wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 
   .content-text,
   .content-image {

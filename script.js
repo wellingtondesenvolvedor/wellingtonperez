@@ -14,17 +14,49 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- Lógica do Menu Hambúrguer (Mobile) ---
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
+const overlay = document.getElementById('menu-overlay');
 
-// Abre e fecha o menu ao clicar no ícone
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
 });
 
-// Fecha o menu automaticamente quando um link é clicado
+overlay.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    overlay.classList.remove('active');
+});
+
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+});
+
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-menu a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+        }
     });
 });

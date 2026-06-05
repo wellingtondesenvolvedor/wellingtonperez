@@ -43,6 +43,27 @@ h3 {
   padding-bottom: 0.5rem;
 }
 
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, .55);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: .3s;
+
+  z-index: 1500;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 /* Header / Hero Section */
 .hero {
   height: 100vh;
@@ -280,7 +301,7 @@ footer {
   /* Fundo escuro levemente transparente */
   backdrop-filter: blur(10px);
   /* Efeito de vidro fosco */
-  z-index: 1000;
+  z-index: 2000;
   padding: 1rem 0;
   border-bottom: 1px solid var(--surface-color);
 }
@@ -484,88 +505,126 @@ section {
   }
 }
 
-/* --- Estilos base do Menu Hambúrguer (Escondido no Desktop) --- */
-/* --- Ajuste do Menu Hambúrguer (Suspenso e Maior) --- */
+/* ================================================= */
+/* MENU HAMBÚRGUER */
+/* ================================================= */
+
 .hamburger {
   display: none;
   cursor: pointer;
   flex-direction: column;
   gap: 7px;
-  /* Aumentado de 6px para 7px */
-  position: absolute;
-  right: 25px;
-  /* Aumentado de 20px para 25px para afastar da borda */
-  top: 50%;
-  transform: translateY(-50%);
   z-index: 1001;
-  padding: 10px;
-  /* Adicionado para aumentar a área de toque */
-  background-color: rgba(168, 85, 247, 0.1);
-  /* Um leve fundo translúcido para dar destaque */
-  border-radius: 8px;
 }
 
 .hamburger span {
   display: block;
   width: 32px;
-  /* Aumentado de 28px para 32px */
   height: 4px;
-  /* Aumentado de 3px para 4px */
   background-color: var(--text-main);
   border-radius: 4px;
   transition: all 0.3s ease;
+  transform-origin: center;
 }
 
-/* --- Responsividade da Barra de Navegação para Celulares --- */
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
+
 @media (max-width: 768px) {
+
+  .navbar {
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    padding: 0;
+  }
+
   .hamburger {
     display: flex;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    padding: 12px;
+
+    background: rgba(26, 16, 60, 0.95);
+
+    border: 1px solid var(--primary-color);
+
+    border-radius: 10px;
+
+    box-shadow:
+      0 0 10px rgba(168, 85, 247, .3),
+      0 0 25px rgba(168, 85, 247, .15);
+
+    z-index: 3000;
   }
 
-  .navbar ul {
-    position: absolute;
-    top: 100%;
-    left: -100%;
+  .nav-menu {
+    position: fixed;
+
+    top: 0;
+    right: -100%;
+
+    width: min(250px, 80vw);
+    height: 100vh;
+
+    display: flex;
     flex-direction: column;
-    width: 100%;
+
+    justify-content: flex-start;
+
+    padding-top: 90px;
+
     background-color: rgba(10, 5, 20, 0.98);
+
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+
     backdrop-filter: blur(15px);
-    padding: 0;
-    /* Zeramos o padding aqui para colocar nos itens */
+
+    border-left: 1px solid rgba(168, 85, 247, 0.35);
+
     gap: 0;
-    /* Removemos o gap para que as linhas separadoras fiquem coladas */
-    transition: left 0.4s ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    border-bottom: 2px solid var(--primary-color);
+
+    transition: right .35s cubic-bezier(.22,.61,.36,1);
+
+    z-index: 2000;
   }
 
-  .navbar ul.active {
-    left: 0;
+  .nav-menu.active {
+    right: 0;
   }
 
-  /* Adiciona a linha separadora sutil em cada item da lista */
-  .navbar li {
+  .nav-menu li {
     width: 100%;
     border-bottom: 1px solid rgba(168, 85, 247, 0.15);
-    /* Linha roxa bem discreta */
   }
 
-  /* Remove a linha do último item para não conflitar com a borda de baixo do menu */
-  .navbar li:last-child {
+  .nav-menu li:last-child {
     border-bottom: none;
   }
 
-  /* Desgruda o texto da borda e aumenta a área de clique */
-  .navbar a {
-    font-size: 1.1rem;
+  .nav-menu a {
     display: block;
     width: 100%;
     padding: 1.2rem 2rem;
-    /* 1.2rem em cima/baixo e 2rem nas laterais */
+    font-size: 1.05rem;
+  }
+
+    .nav-menu a.active {
+        color: var(--primary-color);
+        background: rgba(168, 85, 247, 0.08);
+        border-left: 3px solid var(--primary-color);
+    }
+
+  .nav-menu a:hover {
+    background: rgba(168, 85, 247, 0.08);
+    color: var(--primary-color);
   }
 
   .hamburger.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
+    transform: translateY(11px) rotate(45deg);
     background-color: var(--primary-color);
   }
 
@@ -574,8 +633,25 @@ section {
   }
 
   .hamburger.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-11px) rotate(-45deg);
     background-color: var(--primary-color);
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.1rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cosmic-network {
+    transform: translate(-50%, -50%) scale(0.6);
   }
 
   section {

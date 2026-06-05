@@ -39,20 +39,39 @@
             </div>
         </section>
 
-        <section class="projects slide-up">
-            <h3>Projetos em Destaque</h3>
+        <section class="projects slide-up" id="projetos">
+            <h3>Projetos e Impacto no iFood</h3>
+            
             <div class="project-grid">
                 <div class="project-card">
-                    <h4>Do Bairro</h4>
-                    <p>Aplicativo Android hiperlocal criado para conectar serviços e necessidades dentro da comunidade de forma simples e direta.</p>
+                    <h4>Dashboards de Monitoramento e Qualidade (MQI)</h4>
+                    <p>Implementação pioneira da cultura de análise de dados no setor de integração de Groceries. O ecossistema de dashboards foi criado para garantir a saúde das integrações e maximizar os resultados dos parceiros.</p>
+                    <ul class="project-highlights">
+                        <li><strong>Monitoramento de GMV:</strong> Rastreamento de lojas com falhas de integração, resguardando um GMV de <strong>R$ 840 Milhões</strong>.</li>
+                        <li><strong>Observabilidade de APIs:</strong> Análise volumétrica e de status codes (2xx, 4xx, 5xx) em endpoints críticos (separação, cancelamento, ingestão de dados), identificando gargalos e falhas de requisição.</li>
+                        <li><strong>Heatmaps e Anomalias:</strong> Mapeamento de rupturas para definição de estoque mínimo seguro e auditoria de alterações atípicas em atributos chave (preço, estoque, descrição).</li>
+                        <li><strong>Governança:</strong> Identificação de uso abusivo de parâmetros de alto custo computacional (como o <i>reset</i> de estoque) e mapeamento da adoção de APIs modernas versus legadas.</li>
+                    </ul>
                 </div>
+
                 <div class="project-card">
-                    <h4>Automação e Análise de Performance</h4>
-                    <p>Desenvolvimento de fluxos e dashboards para análise de dados de lojas e parceiros do Marketplace, melhorando a visibilidade métrica da operação.</p>
+                    <h4>iReport - Automação de Documentação</h4>
+                    <p>Ferramenta desenvolvida em Python para automatizar a extração e auditoria das configurações iniciais de lojas implantadas. A aplicação consome os endpoints do backoffice, processa os arquivos JSON e gera um relatório em PDF arquivado diretamente no Salesforce.</p>
+                    <ul class="project-highlights">
+                        <li><strong>Impacto:</strong> Redução do tempo de auditoria de 4 minutos para apenas 10 segundos por loja.</li>
+                        <li><strong>Escala:</strong> Em um cenário de 1.200 implantações mensais, a ferramenta gerou uma <strong>economia de mais de 76 horas mensais</strong> de trabalho manual.</li>
+                        <li><strong>Tecnologias Core:</strong> <code>requests</code> (consumo de APIs), <code>json</code> (manipulação de payload) e <code>pdfkit</code> (geração de relatórios).</li>
+                        <li><strong>Apoio:</strong> <code>Kivy</code> (para interface gráfica) e <code>os</code>.</li>
+                    </ul>
                 </div>
+
                 <div class="project-card">
-                    <h4>Migração e Integração de Sistemas</h4>
-                    <p>Gestão de homologação de integradores e sustentação de serviços de ponta a ponta, garantindo estabilidade e escalabilidade das plataformas.</p>
+                    <h4>Open Links - Validação em Massa</h4>
+                    <p>Aplicação desktop em Python com interface gráfica (Tkinter) desenvolvida para acelerar o processo de troubleshooting e monitoramento ativo do ecossistema.</p>
+                    <ul class="project-highlights">
+                        <li><strong>Funcionalidade:</strong> Permite a injeção de múltiplos IDs de lojas e direcionamento em lote para diversas plataformas internas de validação (Metabase, Extranet, BKO Área de Entrega, Shop Metrics).</li>
+                        <li><strong>Resultado:</strong> Otimização extrema no tempo de resposta da equipe para validar funcionamentos, verificar pausas e analisar o <i>rollout</i> de integrações.</li>
+                    </ul>
                 </div>
             </div>
         </section>

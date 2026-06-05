@@ -152,6 +152,35 @@ section {
     margin-bottom: 1rem;
 }
 
+/* Project Highlights (Listas de Impacto) */
+.project-highlights {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.project-highlights li {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.project-highlights li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.project-highlights strong {
+    color: var(--text-main);
+}
+
 /* Timeline Expecience */
 .timeline-item {
     border-left: 2px solid var(--primary-color);

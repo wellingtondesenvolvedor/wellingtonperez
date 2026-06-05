@@ -137,6 +137,11 @@ section {
   margin-bottom: 6rem;
 }
 
+.content-text,
+.content-image {
+  flex: 1;
+}
+
 /* Skills */
 .skills-grid {
   display: flex;
@@ -533,6 +538,11 @@ section {
 
 @media (max-width: 768px) {
 
+  .content-text,
+  .content-image {
+    min-width: 100%;
+  }
+
   .navbar {
     background: transparent;
     border: none;
@@ -587,7 +597,7 @@ section {
 
     gap: 0;
 
-    transition: right .35s cubic-bezier(.22,.61,.36,1);
+    transition: right .35s cubic-bezier(.22, .61, .36, 1);
 
     z-index: 2000;
   }
@@ -612,11 +622,11 @@ section {
     font-size: 1.05rem;
   }
 
-    .nav-menu a.active {
-        color: var(--primary-color);
-        background: rgba(168, 85, 247, 0.08);
-        border-left: 3px solid var(--primary-color);
-    }
+  .nav-menu a.active {
+    color: var(--primary-color);
+    background: rgba(168, 85, 247, 0.08);
+    border-left: 3px solid var(--primary-color);
+  }
 
   .nav-menu a:hover {
     background: rgba(168, 85, 247, 0.08);

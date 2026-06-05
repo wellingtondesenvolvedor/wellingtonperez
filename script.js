@@ -60,3 +60,20 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+const previewImage = document.querySelector('.content-image-preview');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+if (previewImage) {
+
+    previewImage.addEventListener('click', () => {
+        lightboxImg.src = previewImage.src;
+        lightbox.classList.add('active');
+    });
+
+    lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+
+}

@@ -510,6 +510,55 @@ section {
     gap: 2rem;
 }
 
+.content-image-preview {
+    max-width: 100%;
+    border-radius: 12px;
+    border: 2px solid var(--surface-color);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+    cursor: zoom-in;
+    transition: transform .3s ease;
+}
+
+.content-image-preview:hover {
+    transform: scale(1.02);
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.9);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .3s ease;
+
+    z-index: 9999;
+
+    cursor: zoom-out;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 20px rgba(168, 85, 247, .4),
+        0 0 40px rgba(168, 85, 247, .2);
+}
+
 @keyframes fadeIn {
   to {
     opacity: 1;

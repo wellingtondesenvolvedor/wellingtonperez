@@ -304,3 +304,20 @@ section {
 @keyframes fadeIn {
     to { opacity: 1; }
 }
+
+/* --- Responsividade da Barra de Navegação para Celulares --- */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-wrap: wrap; /* Permite que os links quebrem linha se faltar espaço na tela */
+        gap: 1rem;
+        padding: 0 10px;
+    }
+    
+    .navbar a {
+        font-size: 0.85rem; /* Diminui levemente a fonte no celular para caber melhor */
+    }
+    
+    section {
+        scroll-margin-top: 110px; /* Aumenta a margem de rolagem para compensar a barra caso ela ocupe duas linhas */
+    }
+}

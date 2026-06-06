@@ -304,12 +304,39 @@ footer {
   left: 0;
   width: 100%;
   background-color: rgba(10, 5, 20, 0.85);
-  /* Fundo escuro levemente transparente */
   backdrop-filter: blur(10px);
-  /* Efeito de vidro fosco */
   z-index: 2000;
-  padding: 1rem 0;
+  padding: 1rem 5%;
+  /* Atualizado: 5% de margem nas laterais para não colar na borda */
   border-bottom: 1px solid var(--surface-color);
+  display: flex;
+  /* Atualizado: Alinha a logo e o menu na mesma linha */
+  justify-content: space-between;
+  /* Atualizado: Joga a logo para esquerda e menu pra direita */
+  align-items: center;
+}
+
+/* --- Estilo da Logo --- */
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.nav-logo i {
+  color: var(--primary-color);
+  /* Deixa o ícone do terminal roxo */
+}
+
+.nav-logo:hover {
+  color: var(--primary-color);
+  transform: scale(1.05);
+  /* Leve efeito de zoom ao passar o mouse */
 }
 
 .navbar ul {
@@ -506,9 +533,9 @@ section {
 }
 
 .content-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .image-preview-wrapper {
@@ -554,39 +581,39 @@ section {
 }
 
 .lightbox {
-    position: fixed;
-    inset: 0;
+  position: fixed;
+  inset: 0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.9);
 
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 
-    transition: .3s ease;
+  transition: .3s ease;
 
-    z-index: 9999;
+  z-index: 9999;
 
-    cursor: zoom-out;
+  cursor: zoom-out;
 }
 
 .lightbox.active {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .lightbox img {
-    max-width: 90vw;
-    max-height: 90vh;
+  max-width: 90vw;
+  max-height: 90vh;
 
-    border-radius: 12px;
+  border-radius: 12px;
 
-    box-shadow:
-        0 0 20px rgba(168, 85, 247, .4),
-        0 0 40px rgba(168, 85, 247, .2);
+  box-shadow:
+    0 0 20px rgba(168, 85, 247, .4),
+    0 0 40px rgba(168, 85, 247, .2);
 }
 
 @keyframes fadeIn {
@@ -623,9 +650,9 @@ section {
 
 @media (max-width: 768px) {
   .content-wrapper {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
   .content-text,
   .content-image {
@@ -637,6 +664,20 @@ section {
     border: none;
     backdrop-filter: none;
     padding: 0;
+  }
+
+  /* --- Logo Flutuante no Celular --- */
+  .nav-logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 3000;
+    background: rgba(26, 16, 60, 0.95);
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(168, 85, 247, .3), 0 0 25px rgba(168, 85, 247, .15);
+    font-size: 1.2rem;
   }
 
   .hamburger {

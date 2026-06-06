@@ -1,9 +1,7 @@
-:root {
+﻿:root {
   --bg-color: #0a0514;
-  /* Fundo super escuro, levemente puxado pro roxo */
   --surface-color: #1a103c;
   --primary-color: #a855f7;
-  /* Roxo vibrante */
   --primary-hover: #9333ea;
   --text-main: #f3e8ff;
   --text-muted: #d8b4fe;
@@ -17,7 +15,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* Cria o efeito de rolagem suave */
 }
 
 body {
@@ -46,15 +43,11 @@ h3 {
 .menu-overlay {
   position: fixed;
   inset: 0;
-
-  background: rgba(0, 0, 0, .55);
-
+  background: rgba(0, 0, 0, 0.55);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-
-  transition: .3s;
-
+  transition: 0.3s;
   z-index: 1500;
 }
 
@@ -64,7 +57,80 @@ h3 {
   pointer-events: auto;
 }
 
-/* Header / Hero Section */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(10, 5, 20, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  padding: 1rem 5%;
+  border-bottom: 1px solid var(--surface-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.nav-logo i {
+  color: var(--primary-color);
+}
+
+.nav-logo:hover {
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--primary-color);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 7px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 32px;
+  height: 4px;
+  background-color: var(--text-main);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
 .hero {
   height: 100vh;
   display: flex;
@@ -72,6 +138,13 @@ h3 {
   justify-content: center;
   text-align: center;
   background: radial-gradient(circle at center, #2e1065 0%, var(--bg-color) 70%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -96,10 +169,8 @@ h3 {
   gap: 1rem;
   justify-content: center;
   margin-top: 2rem;
-  /* Adiciona um bom espaço entre a cidade e os botões */
 }
 
-/* Botões com Efeito */
 .btn {
   padding: 0.8rem 2rem;
   background-color: var(--primary-color);
@@ -127,7 +198,6 @@ h3 {
   color: #fff;
 }
 
-/* Main Content */
 main {
   max-width: 1000px;
   margin: 0 auto;
@@ -136,6 +206,7 @@ main {
 
 section {
   margin-bottom: 6rem;
+  scroll-margin-top: 80px;
 }
 
 .content-text,
@@ -143,7 +214,75 @@ section {
   flex: 1;
 }
 
-/* Skills */
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.image-preview-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: zoom-in;
+}
+
+.content-image-preview {
+  max-width: 100%;
+  display: block;
+  border-radius: 12px;
+  border: 2px solid var(--surface-color);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-preview-wrapper:hover .content-image-preview {
+  transform: scale(1.02);
+  filter: brightness(1.08);
+}
+
+.zoom-indicator {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 5, 20, 0.85);
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.45);
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4), 0 0 40px rgba(168, 85, 247, 0.2);
+}
+
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -166,7 +305,6 @@ section {
   box-shadow: 0 0 15px var(--primary-color);
 }
 
-/* Projects */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -191,7 +329,6 @@ section {
   margin-bottom: 1rem;
 }
 
-/* Project Highlights (Listas de Impacto) */
 .project-highlights {
   list-style: none;
   padding: 0;
@@ -220,7 +357,6 @@ section {
   color: var(--text-main);
 }
 
-/* Timeline Expecience */
 .timeline-item {
   border-left: 2px solid var(--primary-color);
   padding-left: 2rem;
@@ -251,34 +387,8 @@ section {
   margin-bottom: 1rem;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  border-top: 1px solid var(--surface-color);
-  color: var(--text-muted);
-}
-
-/* Animações CSS Base */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
-}
-
-.slide-up {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.slide-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* --- Estilos para a Seção AI e Simulador de Chat --- */
 .chat-snippet {
-  background-color: #000000;
+  background-color: #000;
   border-left: 4px solid var(--primary-color);
   padding: 1.2rem;
   margin-top: 2rem;
@@ -297,89 +407,29 @@ footer {
   line-height: 1.4;
 }
 
-/* --- Barra de Navegação --- */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(10, 5, 20, 0.85);
-  backdrop-filter: blur(10px);
-  z-index: 2000;
-  padding: 1rem 5%;
-  /* Atualizado: 5% de margem nas laterais para não colar na borda */
-  border-bottom: 1px solid var(--surface-color);
-  display: flex;
-  /* Atualizado: Alinha a logo e o menu na mesma linha */
-  justify-content: space-between;
-  /* Atualizado: Joga a logo para esquerda e menu pra direita */
-  align-items: center;
-}
-
-/* --- Estilo da Logo --- */
-.nav-logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--text-main);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  transition: all 0.3s ease;
-}
-
-.nav-logo i {
-  color: var(--primary-color);
-  /* Deixa o ícone do terminal roxo */
-}
-
-.nav-logo:hover {
-  color: var(--primary-color);
-  transform: scale(1.05);
-  /* Leve efeito de zoom ao passar o mouse */
-}
-
-.navbar ul {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar a {
-  color: var(--text-main);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-  color: var(--primary-color);
-}
-
-/* Header / Hero Section Ajustado */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+footer {
   text-align: center;
-  background: radial-gradient(circle at center, #2e1065 0%, var(--bg-color) 70%);
-  position: relative;
-  overflow: hidden;
-  /* Impede que as órbitas criem barra de rolagem horizontal */
+  padding: 2rem;
+  border-top: 1px solid var(--surface-color);
+  color: var(--text-muted);
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  /* Garante que o texto e os botões fiquem acima do desenho */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
 }
 
-/* --- Arte CSS: Constelação de Dados (Cósmico + Integração) --- */
+.slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .cosmic-network {
   position: absolute;
   top: 50%;
@@ -388,12 +438,9 @@ footer {
   width: 600px;
   height: 600px;
   z-index: 1;
-  /* Fica atrás do texto */
   pointer-events: none;
-  /* O mouse ignora o desenho, permitindo clicar nos botões */
 }
 
-/* Núcleo brilhante (Buraco Negro / Servidor Central) */
 .core {
   position: absolute;
   top: 50%;
@@ -407,69 +454,16 @@ footer {
   animation: pulseCore 4s infinite alternate;
 }
 
-/* Órbitas (Trilhas de dados espaciais) */
 .orbit {
   position: absolute;
   top: 50%;
   left: 50%;
   border: 1px dashed rgba(168, 85, 247, 0.25);
-  /* Tracejado para lembrar pacotes de dados */
   border-radius: 50%;
   transform: translate(-50%, -50%);
   animation: spin linear infinite;
 }
 
-/* Tamanhos e velocidades diferentes para cada órbita */
-.orbit-1 {
-  width: 250px;
-  height: 250px;
-  animation-duration: 20s;
-}
-
-.orbit-2 {
-  width: 450px;
-  height: 450px;
-  animation-duration: 35s;
-  animation-direction: reverse;
-}
-
-.orbit-3 {
-  width: 650px;
-  height: 650px;
-  animation-duration: 50s;
-}
-
-/* Nódulos de dados (Satélites/UFOs transitando) */
-.node {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: var(--text-main);
-  border-radius: 50%;
-  box-shadow: 0 0 15px var(--text-main), 0 0 25px var(--primary-color);
-}
-
-/* Posicionando os nós em diferentes pontos de suas órbitas */
-.orbit-1 .node {
-  top: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.orbit-2 .node {
-  background-color: var(--primary-color);
-  top: 50%;
-  left: -5px;
-  transform: translateY(-50%);
-}
-
-.orbit-3 .node {
-  background-color: var(--text-muted);
-  top: 85%;
-  left: 15%;
-}
-
-/* Tamanhos e velocidades normais (Sem o mouse) */
 .orbit-1 {
   width: 250px;
   height: 250px;
@@ -489,32 +483,53 @@ footer {
   animation-duration: 60s;
 }
 
-/* --- Interação com o Mouse (Hover na Constelação) --- */
-/* Transições aplicadas APENAS nas cores e sombras, ignorando a rotação para não quebrar a órbita */
+.node {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--text-main);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--text-main), 0 0 25px var(--primary-color);
+}
+
+.orbit-1 .node {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.orbit-2 .node {
+  background-color: var(--primary-color);
+  top: 50%;
+  left: -5px;
+  transform: translateY(-50%);
+}
+
+.orbit-3 .node {
+  background-color: var(--text-muted);
+  top: 86%;
+  left: 15%;
+}
+
 .core,
 .orbit,
 .node {
   transition: box-shadow 0.5s ease, border-color 0.5s ease, background-color 0.5s ease;
 }
 
-/* Quando o mouse passa em qualquer lugar do Hero, a arte reage */
 .hero:hover .core {
-  /* O núcleo ganha um brilho maior e mais espalhado */
   box-shadow: 0 0 60px var(--primary-color), 0 0 120px var(--primary-hover);
 }
 
 .hero:hover .orbit {
-  /* As linhas tracejadas ficam mais visíveis/brilhantes */
   border-color: rgba(168, 85, 247, 0.6);
 }
 
 .hero:hover .node {
-  /* Os "pacotes de dados" em órbita brilham mais forte e ficam brancos */
   box-shadow: 0 0 20px var(--text-main), 0 0 40px var(--primary-hover);
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
-/* --- Aceleração das Órbitas no Hover --- */
 .hero:hover .orbit-1 {
   animation-duration: 8s;
 }
@@ -526,127 +541,6 @@ footer {
 .hero:hover .orbit-3 {
   animation-duration: 25s;
 }
-
-/* Evita que o topo da seção fique escondido atrás da barra fixa */
-section {
-  scroll-margin-top: 80px;
-}
-
-.content-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.image-preview-wrapper {
-  position: relative;
-  display: inline-block;
-  cursor: zoom-in;
-}
-
-.content-image-preview {
-  max-width: 100%;
-  display: block;
-  border-radius: 12px;
-  border: 2px solid var(--surface-color);
-  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
-  transition: transform .3s ease, filter .3s ease;
-}
-
-.image-preview-wrapper:hover .content-image-preview {
-  transform: scale(1.02);
-  filter: brightness(1.08);
-}
-
-.zoom-indicator {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
-
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(10, 5, 20, 0.85);
-  border: 1px solid var(--primary-color);
-  border-radius: 50%;
-
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.45);
-
-  font-size: 1.2rem;
-  pointer-events: none;
-}
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: rgba(0, 0, 0, 0.9);
-
-  opacity: 0;
-  visibility: hidden;
-
-  transition: .3s ease;
-
-  z-index: 9999;
-
-  cursor: zoom-out;
-}
-
-.lightbox.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.lightbox img {
-  max-width: 90vw;
-  max-height: 90vh;
-
-  border-radius: 12px;
-
-  box-shadow:
-    0 0 20px rgba(168, 85, 247, .4),
-    0 0 40px rgba(168, 85, 247, .2);
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* ================================================= */
-/* MENU HAMBÚRGUER */
-/* ================================================= */
-
-.hamburger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 7px;
-  z-index: 1001;
-}
-
-.hamburger span {
-  display: block;
-  width: 32px;
-  height: 4px;
-  background-color: var(--text-main);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  transform-origin: center;
-}
-
-/* ================================================= */
-/* MOBILE */
-/* ================================================= */
 
 @media (max-width: 768px) {
   .content-wrapper {
@@ -666,7 +560,6 @@ section {
     padding: 0;
   }
 
-  /* --- Logo Flutuante no Celular --- */
   .nav-logo {
     position: fixed;
     top: 20px;
@@ -676,7 +569,7 @@ section {
     border: 1px solid var(--primary-color);
     border-radius: 10px;
     padding: 10px 15px;
-    box-shadow: 0 0 10px rgba(168, 85, 247, .3), 0 0 25px rgba(168, 85, 247, .15);
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3), 0 0 25px rgba(168, 85, 247, 0.15);
     font-size: 1.2rem;
   }
 
@@ -685,50 +578,30 @@ section {
     position: fixed;
     top: 20px;
     right: 20px;
-
     padding: 12px;
-
     background: rgba(26, 16, 60, 0.95);
-
     border: 1px solid var(--primary-color);
-
     border-radius: 10px;
-
-    box-shadow:
-      0 0 10px rgba(168, 85, 247, .3),
-      0 0 25px rgba(168, 85, 247, .15);
-
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3), 0 0 25px rgba(168, 85, 247, 0.15);
     z-index: 3000;
   }
 
   .nav-menu {
     position: fixed;
-
     top: 0;
     right: -100%;
-
     width: min(250px, 80vw);
     height: 100vh;
-
     display: flex;
     flex-direction: column;
-
     justify-content: flex-start;
-
     padding-top: 90px;
-
     background-color: rgba(10, 5, 20, 0.98);
-
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-
     backdrop-filter: blur(15px);
-
     border-left: 1px solid rgba(168, 85, 247, 0.35);
-
     gap: 0;
-
-    transition: right .35s cubic-bezier(.22, .61, .36, 1);
-
+    transition: right 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
     z-index: 2000;
   }
 
@@ -793,13 +666,14 @@ section {
   .cosmic-network {
     transform: translate(-50%, -50%) scale(0.6);
   }
+}
 
-  section {
-    scroll-margin-top: 80px;
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
 
-/* Animações Keyframes */
 @keyframes spin {
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
